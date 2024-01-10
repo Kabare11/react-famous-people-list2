@@ -18,6 +18,7 @@ router.get('/', (req, res) => {
     })
 });
 
+
 router.post('/', (req, res) => {
     console.log('POST req.body', req.body);
     let queryText = 'INSERT INTO "people" ("name", "role") VALUES ($1, $2);'
