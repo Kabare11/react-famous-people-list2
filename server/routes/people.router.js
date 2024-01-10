@@ -22,12 +22,12 @@ router.post('/', (req, res) => {
     console.log('POST req.body', req.body);
     let queryText = 'INSERT INTO "people" ("name", "role") VALUES ($1, $2);'
     pool.query(queryText, [req.body.name, req.body.role])
-    .then((result) => {
-        res.sendStatus(200);
-    }).catch((err) => {
-        console.log(err);
-        res.sendStatus(500);
-    });
+        .then((result) => {
+            res.sendStatus(200);
+        }).catch((err) => {
+            console.log(err);
+            res.sendStatus(500);
+        });
 });
 
 module.exports = router;
